@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Dative:</strong>
-  <%= @declension.dative %>
+  <strong>ФИО в Родительном падеже:</strong>
+  <%= @declension.genitive_lname %>
+  <%= @declension.genitive_fname %>
+  <%= @declension.genitive_mname %>
 </p>
 
 <%= link_to 'Edit', edit_declension_path(@declension) %> |

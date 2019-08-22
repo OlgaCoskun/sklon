@@ -68,8 +68,10 @@ class DeclensionsController < ApplicationController
       @declension = Declension.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def declension_params
-      params.require(:declension).permit(:dative, :accusative, :instrumental, :prepositional, :genitive)
+      params.require(:declension).permit(:dative_fname, :accusative_fname, :instrumental_fname, :prepositional_fname,
+                                         :genitive_fname, :dative_mname, :accusative_mname, :instrumental_mname,
+                                         :prepositional_mname, :genitive_mname, :dative_lname, :accusative_lname,
+                                         :instrumental_lname, :prepositional_lname, :genitive_lname)
     end
 end

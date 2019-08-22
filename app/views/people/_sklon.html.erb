@@ -1,0 +1,50 @@
+<h2>Все склонения имени, фамилии, отчества</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Падеж</th>
+    <th>Имя</th>
+    <th>Фамилия</th>
+    <th>Отчество</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Родительный</td>
+      <td><%= person.declension.genitive_fname %></td>
+      <td><%= person.declension.genitive_lname %></td>
+      <td><%= person.declension.genitive_mname %></td>
+    </tr>
+
+    <tr>
+      <td>Дательный</td>
+      <td><%= person.declension.dative_fname %></td>
+      <td><%= person.declension.dative_lname %></td>
+      <td><%= person.declension.dative_mname %></td>
+    </tr>
+
+    <tr>
+      <td>Винительный</td>
+      <td><%= person.declension.accusative_fname %></td>
+      <td><%= person.declension.accusative_lname %></td>
+      <td><%= person.declension.accusative_mname %></td>
+    </tr>
+
+    <tr>
+      <td>Творительный</td>
+      <td><%= person.declension.instrumental_fname %></td>
+      <td><%= person.declension.instrumental_lname %></td>
+      <td><%= person.declension.instrumental_mname %></td>
+    </tr>
+
+    <tr>
+      <td>Предложный</td>
+      <td><%= person.declension.prepositional_fname %></td>
+      <td><%= person.declension.prepositional_lname %></td>
+      <td><%= person.declension.prepositional_mname %></td>
+    </tr>
+  </tbody>
+</table>

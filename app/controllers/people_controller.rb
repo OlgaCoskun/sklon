@@ -43,6 +43,7 @@ class PeopleController < ApplicationController
     respond_to do |format|
       if @person.update(person_params)
         @person.create_full_name
+        @person.set_names.save
         format.html { redirect_to @person, notice: 'Person was successfully updated.' }
         format.json { render :show, status: :ok, location: @person }
       else

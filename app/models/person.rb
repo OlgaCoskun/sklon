@@ -1,6 +1,4 @@
 class Person < ApplicationRecord
-  # include Petrovich::Extension
-
   has_one :declension, dependent: :destroy
   before_create :set_names
 
@@ -15,11 +13,6 @@ class Person < ApplicationRecord
             gender: :my_gender
 
   def my_firstname
-    # здесь пробовала другие окончания( как 'genitive.to_s', '_genitive', '.to(:genetive)') в зависимост от версии
-    # гема Petrovich, все приводили к ошибкам
-    # self.first_name.genitive.to_s
-
-    # если просто выводить в табл Declensions имена, то это будет выглядеть так:
     self.first_name
   end
 
@@ -41,9 +34,19 @@ class Person < ApplicationRecord
   end
 
   def set_names
-    # build_declension(genitive_fname: 'olga') # так тоже работает
+    p_genetive = Petrovich(firstname: my_firstname, middlename: my_middlename, lastname: my_lastname).genitive
+    p_dative = Petrovich(firstname: my_firstname, middlename: my_middlename, lastname: my_lastname).dative
+    p_accusative = Petrovich(firstname: my_firstname, middlename: my_middlename, lastname: my_lastname).accusative
+    p_instrumental = Petrovich(firstname: my_firstname, middlename: my_middlename, lastname: my_lastname).instrumental
+    p_prepositional = Petrovich(firstname: my_firstname, middlename: my_middlename, lastname: my_lastname).prepositional
 
-    # записывает ФИО в табл declension. К сожалению без склонений, гем Петрович не работает.
-    build_declension(genitive_fname: my_firstname, genitive_mname: my_middlename, genitive_lname: my_lastname)
+
+    build_declension(genitive_fname: p_genetive.firstname, genitive_mname: p_genetive.middlename, genitive_lname: p_genetive.lastname,
+                     dative_fname: p_dative.firstname, dative_mname: p_dative.middlename, dative_lname: p_dative.lastname,
+                     accusative_fname: p_accusative.firstname, accusative_mname: p_accusative.middlename, accusative_lname: p_accusative.lastname,
+                     instrumental_fname: p_instrumental.firstname, instrumental_mname: p_instrumental.middlename, instrumental_lname: p_instrumental.lastname,
+                     prepositional_fname: p_prepositional.firstname, prepositional_mname: p_prepositional.middlename, prepositional_lname: p_prepositional.lastname
+                     )
+
   end
 end
