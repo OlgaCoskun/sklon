@@ -1,0 +1,22 @@
+<%= form_with(model: declension, local: true) do |form| %>
+  <% if declension.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(declension.errors.count, "error") %> prohibited this declension from being saved:</h2>
+
+      <ul>
+        <% declension.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dative %>
+    <%= form.text_field :dative %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
