@@ -12,6 +12,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'petrovich', '~> 1.0' # гем для склонений ФИО
 
 group :development, :test do
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.8'
   gem 'byebug'
 end
