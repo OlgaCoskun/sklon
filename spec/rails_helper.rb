@@ -6,7 +6,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-
+require 'capybara/rspec'
 # специальные "матчеры" - методы, удобные для тестирования валидаций
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -55,3 +55,4 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+Capybara.asset_host = "http://localhost:3000"

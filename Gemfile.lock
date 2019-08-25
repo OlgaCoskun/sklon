@@ -89,6 +89,8 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -233,9 +235,10 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
-  capybara (>= 2.15)
+  capybara
   factory_bot_rails
   jbuilder (~> 2.7)
+  launchy
   listen (>= 3.0.5, < 3.2)
   petrovich (~> 1.0)
   pg (>= 0.18, < 2.0)
